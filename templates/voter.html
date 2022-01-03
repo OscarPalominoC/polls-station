@@ -27,6 +27,7 @@
                         <td>{{voter.name + ' ' +voter.lastname}}</td>
                         <td>
                             <a class="btn btn-success" href="#">Votar</a>
+                            <a class="btn btn-success" href="/voters/edit-voter/{{voter.id}}">Edit</a>
                         </td>
                     </tr>
                     {% endfor %}
