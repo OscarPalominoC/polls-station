@@ -1,0 +1,18 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Create a city.
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success" href="">Save</button> <a class="btn btn-danger" href="/">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

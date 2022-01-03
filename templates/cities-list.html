@@ -1,0 +1,38 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            List of cities
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                Check here the list of cities.
+            </div>
+            <p class="card-text">
+                
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Action</th>
+                </thead>
+                <tbody>
+                    {% for city in cities %}
+                    <tr class="pointer">
+                        <td>{{loop.index}}</td>
+                        <td>{{city.name}}</td>
+                        <td>
+                            <a href="/cities/edit-city/{{city.id}}" class="btn btn-info">Edit city</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                <a onclick="window.location.href='/cities/create-city'" class="btn btn-success">Create a city</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+{%include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Votantes!
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                Lista de los Votantes
+            </div>
+            <p class="card-text">
+                Consulta aquí dónde puedes votar.
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">Numero de identificación</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Acción</th>
+                </thead>
+                <tbody>
+                    {% for voter in voters %}
+                    <tr class="pointer">
+                        <td>{{loop.index}}</td>
+                        <td>{{voter.document_id}}</td>
+                        <td>{{voter.name + ' ' +voter.lastname}}</td>
+                        <td>
+                            <a class="btn btn-success" href="#">Votar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div>
+                <a onclick="window.location.href='create-voter'" type="button" class="btn btn-success">Crear votante</a>
+            </div> 
+        </div>
+    </div>
+</div>
