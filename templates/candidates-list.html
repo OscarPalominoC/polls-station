@@ -1,0 +1,34 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center">
+            <h1 class="h2">Candidates list</h1>
+        </div>
+        <div class="card-body">
+            <a href="/candidates/register/" class="btn btn-info">Register candidate</a>
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Affiliation</th>
+                    <th scope="col">Action</th>
+                </thead>
+                <tbody>
+                    {% for candidate in candidates %}
+                    <tr class="pointer">
+                        <td>{{loop.index}}</td>
+                        <td>{{candidate.name}}</td>
+                        <td>{{candidate.gender}}</td>
+                        <td>{{candidate.city}}</td>
+                        <td>{{candidate.affiliation}}</td>
+                        <td><a href="/candidates/edit/{{candidate.id}}" class="btn btn-success">Edit</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

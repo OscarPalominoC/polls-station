@@ -1,0 +1,46 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Register a candidate
+        </div>
+        <div class="card-body">
+            {% if voter == Undefined %}
+            <div class="text-danger alert-danger" style="padding: 10px; margin-bottom: 10px; border-radius: 5px;">{{msg}}</div>
+            <form method="get">
+                <div class="form-group">
+                    <label>Type here the ID number.</label>
+                    <input type="number" name="document_id" id="document_id" class="form-control" required>
+                </div>
+                <button class="btn btn-secondary" style="margin-top: 20px;" type="submit">Buscar</button>
+            </form>
+            {% else %}
+            <form method="post">
+                <div class="form-group">
+                    <label>ID Number</label>
+                    <input type="number" class="form-control" value="{{voter.document_id}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" value="{{voter.name}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Lastname</label>
+                    <input type="text" class="form-control" value="{{voter.lastname}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" value="{{city}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Affiliation</label>
+                    <input type="text" name="affiliation" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success" style="margin-top: 20px; margin-right: 20px">Save candidate</button>
+                <a href="/candidates" class="btn btn-danger" style="margin-top: 20px; margin-left: 20px">Cancel</a>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
